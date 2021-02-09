@@ -11,15 +11,19 @@ import Routes from 'src/Routes'
 import './index.css'
 
 const nhostClient = createClient({
-  baseURL: 'https://backend-dfeaw3to.nhost.app',
+  baseURL: 'https://backend-c4bf08c5.nhost.app',
   autoLogin: false,
 })
 
 ReactDOM.render(
   <FatalErrorBoundary page={FatalErrorPage}>
-    <AuthProvider client={nhostClient} type="nhost" skipFetchCurrentUser={false}>
+    <AuthProvider
+      client={nhostClient}
+      type="nhost"
+      skipFetchCurrentUser={false}
+    >
       <RedwoodApolloProvider>
-         <Routes />
+        <Routes />
       </RedwoodApolloProvider>
     </AuthProvider>
   </FatalErrorBoundary>,

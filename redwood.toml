@@ -7,6 +7,6 @@
 
 [web]
   port = 8910
-  apiProxyPath = "https://hasura-dfeaw3to.nhost.app/v1"
+  apiProxyPath = "https://hasura-c4bf08c5.nhost.app/v1"
 [browser]
   open = true
