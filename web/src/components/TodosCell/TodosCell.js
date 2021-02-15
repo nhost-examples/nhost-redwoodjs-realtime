@@ -1,7 +1,7 @@
 import { useMutation } from '@redwoodjs/web'
 
-export const QUERY = gql`
-  query TodosQuery {
+export const SUBSCRIPTION = gql`
+  subscription TodosSubscription {
     todos {
       id
       name
@@ -10,9 +10,9 @@ export const QUERY = gql`
   }
 `
 
-export const beforeQuery = (props) => {
-  return { variables: props, fetchPolicy: 'cache-and-network' }
-}
+// export const beforeQuery = (props) => {
+//   return { variables: props, fetchPolicy: 'cache-and-network' }
+// }
 
 const UPDATE_TODO = gql`
   mutation UpdateTodo($id: uuid!, $completed: Boolean!) {
@@ -51,10 +51,10 @@ export const Success = ({ todos }) => {
 
     updateTodo({
       variables: { id, completed: newState },
-      optimisticResponse: {
-        __typename: 'Mutation',
-        updateTodo: { __typename: 'Todos', id, completed: newState },
-      },
+      // optimisticResponse: {
+      //   __typename: 'Mutation',
+      //   updateTodo: { __typename: 'Todos', id, completed: newState },
+      // },
     })
   }
 
@@ -63,10 +63,10 @@ export const Success = ({ todos }) => {
 
     deleteTodo({
       variables: { id },
-      optimisticResponse: {
-        __typename: 'Mutation',
-        deleteTracks: [id],
-      },
+      // optimisticResponse: {
+      //   __typename: 'Mutation',
+      //   deleteTracks: [id],
+      // },
     })
   }
 

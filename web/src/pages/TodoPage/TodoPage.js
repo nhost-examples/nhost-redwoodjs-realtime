@@ -2,7 +2,7 @@ import { useMutation } from '@redwoodjs/web'
 import { Form, TextField, Submit } from '@redwoodjs/forms'
 import TodosCell from 'src/components/TodosCell'
 import GlobalLayout from 'src/layouts/GlobalLayout/GlobalLayout'
-import { QUERY } from 'src/components/TodosCell'
+// import { SUBSCRIPTION } from 'src/components/TodosCell'
 
 const CREATE_TODO = gql`
   mutation CreateTodo($todo: todos_insert_input!) {
@@ -21,13 +21,13 @@ const TodoPage = () => {
   const onSubmit = (todo) => {
     create({
       variables: { todo: todo },
-      update: (cache, { data: { createTodo } }) => {
-        const { todos } = cache.readQuery({ query: QUERY })
-        cache.writeQuery({
-          query: QUERY,
-          data: { todos: todos.concat([createTodo]) },
-        })
-      },
+      // update: (cache, { data: { createTodo } }) => {
+      //   const { todos } = cache.readQuery({ query: QUERY })
+      //   cache.writeQuery({
+      //     query: QUERY,
+      //     data: { todos: todos.concat([createTodo]) },
+      //   })
+      // },
     })
   }
 
