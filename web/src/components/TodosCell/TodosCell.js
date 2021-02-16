@@ -10,10 +10,6 @@ export const SUBSCRIPTION = gql`
   }
 `
 
-// export const beforeQuery = (props) => {
-//   return { variables: props, fetchPolicy: 'cache-and-network' }
-// }
-
 const UPDATE_TODO = gql`
   mutation UpdateTodo($id: uuid!, $completed: Boolean!) {
     updateTodo: update_todos_by_pk(
@@ -22,7 +18,6 @@ const UPDATE_TODO = gql`
     ) {
       id
       completed
-      __typename
     }
   }
 `
@@ -51,10 +46,6 @@ export const Success = ({ todos }) => {
 
     updateTodo({
       variables: { id, completed: newState },
-      // optimisticResponse: {
-      //   __typename: 'Mutation',
-      //   updateTodo: { __typename: 'Todos', id, completed: newState },
-      // },
     })
   }
 
@@ -63,10 +54,6 @@ export const Success = ({ todos }) => {
 
     deleteTodo({
       variables: { id },
-      // optimisticResponse: {
-      //   __typename: 'Mutation',
-      //   deleteTracks: [id],
-      // },
     })
   }
 
