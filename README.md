@@ -1,3 +1,5 @@
+# All examples has moved to [github.com/nhost/nhost](https://github.com/nhost/nhost/tree/main/examples).
+
 # Todo
 
 This is a very simple todo application built with Nhost, RedwoodJS, and GraphQL subscriptions used to showcase the work done [here](https://github.com/redwoodjs/redwood/pull/1799)
